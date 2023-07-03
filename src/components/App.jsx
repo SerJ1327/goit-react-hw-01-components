@@ -1,16 +1,16 @@
+import { Container } from './App.styled.js';
+import { FriendList } from './FriendList/FriendList.jsx';
+import { UserProfile } from './Profile/Profile.jsx';
+import { Statistics } from './Statistics/Statistics.jsx';
+import { Transactions } from './TransactionHistory/Transaction.jsx';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <UserProfile />
+      <Statistics />
+      <FriendList />
+      <Transactions />
+    </Container>
   );
 };
