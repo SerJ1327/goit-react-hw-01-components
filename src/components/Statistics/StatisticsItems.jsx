@@ -1,4 +1,3 @@
-import { UserProfile } from 'components/Profile/Profile';
 import { PropTypes } from 'prop-types';
 import {
   StyledStatsItem,
@@ -25,6 +24,6 @@ export const StatatisticItems = ({ data }) => {
   });
 };
 
-UserProfile.propTypes = {
-  data: PropTypes.object,
+StatatisticItems.propTypes = {
+  data: PropTypes.array,
 };

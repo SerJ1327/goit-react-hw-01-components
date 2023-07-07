@@ -1,5 +1,4 @@
-import { PropTypes } from 'prop-types';
-import { UserProfile } from 'components/Profile/Profile';
+import PropTypes from 'prop-types';
 import { StyledStatsList, StyledStatsSection } from './Statistics.styled';
 import { StatatisticItems } from './StatisticsItems';
 
@@ -14,7 +13,7 @@ export const Statistics = ({ data, title }) => {
   );
 };
 
-UserProfile.propTypes = {
+Statistics.propTypes = {
   title: PropTypes.string,
-  data: PropTypes.object,
+  data: PropTypes.array,
 };

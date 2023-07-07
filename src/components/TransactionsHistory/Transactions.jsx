@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   STransHeadTr,
   STransTable,
@@ -17,14 +18,14 @@ export const Transactions = ({ transactions }) => {
         </STransHeadTr>
       </thead>
       <tbody>
-        <TransactionsItem data={transactions} />
+        <TransactionsItem transactions={transactions} />
       </tbody>
     </STransTable>
   );
 };
 
-const TransactionsItem = ({ data }) => {
-  return data.map(({ id, type, amount, currency }) => {
+const TransactionsItem = ({ transactions }) => {
+  return transactions.map(({ id, type, amount, currency }) => {
     rowIndex += 1;
     let bColor = 'white';
     if (rowIndex % 2 === 0) {
@@ -38,4 +39,8 @@ const TransactionsItem = ({ data }) => {
       </tr>
     );
   });
+};
+
+Transactions.propTypes = {
+  transactions: PropTypes.array,
 };
