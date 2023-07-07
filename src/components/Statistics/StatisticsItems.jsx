@@ -1,11 +1,12 @@
-import data from '../../data.json';
+import { UserProfile } from 'components/Profile/Profile';
+import { PropTypes } from 'prop-types';
 import {
   StyledStatsItem,
   StyledStatsItemLable,
   StyledStatsItemPercent,
 } from './Statistics.styled';
 
-export const Stats = () => {
+export const StatatisticItems = ({ data }) => {
   return data.map(statistic => {
     return (
       <StyledStatsItem
@@ -22,4 +23,8 @@ export const Stats = () => {
       </StyledStatsItem>
     );
   });
+};
+
+UserProfile.propTypes = {
+  data: PropTypes.object,
 };

@@ -1,12 +1,11 @@
-import data from '../../friends.json';
 import {
   StyledFriendItem,
   StyledFriendStatus,
   StyledFriendName,
   StyledFriendAvatar,
-} from './Friend.styled';
+} from './Friends.styled';
 
-export const FriendListItem = () => {
+export const FriendsListItems = ({ data }) => {
   return data.map(friend => {
     const { avatar, name, isOnline, id } = friend;
     return (

@@ -1,13 +1,20 @@
+import { PropTypes } from 'prop-types';
+import { UserProfile } from 'components/Profile/Profile';
 import { StyledStatsList, StyledStatsSection } from './Statistics.styled';
-import { Stats } from './StatisticsItem';
+import { StatatisticItems } from './StatisticsItems';
 
-export const Statistics = () => {
+export const Statistics = ({ data, title }) => {
   return (
     <StyledStatsSection>
-      <h2 className="title">UPLOAD STATS</h2>
+      {title.length > 0 && <h2> {title}</h2>}
       <StyledStatsList>
-        <Stats />
+        <StatatisticItems data={data} />
       </StyledStatsList>
     </StyledStatsSection>
   );
+};
+
+UserProfile.propTypes = {
+  title: PropTypes.string,
+  data: PropTypes.object,
 };

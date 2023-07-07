@@ -1,4 +1,5 @@
-import data from '../../user.json';
+import PropTypes from 'prop-types';
+
 import {
   StyledUserProfile,
   StyledAvatar,
@@ -10,15 +11,13 @@ import {
   StyledStatsQuantity,
 } from './Profile.styled';
 
-const {
+export const UserProfile = ({
   username,
   tag,
   location,
   avatar,
   stats: { followers, views, likes },
-} = data;
-
-export const UserProfile = () => {
+}) => {
   return (
     <StyledUserProfile>
       <div>
@@ -44,4 +43,14 @@ export const UserProfile = () => {
       </StyledStatsList>
     </StyledUserProfile>
   );
+};
+
+UserProfile.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  followers: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
 };

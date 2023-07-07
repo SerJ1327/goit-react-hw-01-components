@@ -1,13 +1,12 @@
-import data from '../../transactions.json';
 import {
   STransHeadTr,
   STransTable,
   STransTd,
-} from './TransactionHistory.styled';
+} from './TransactionsHistory.styled';
 
 let rowIndex = 0;
 
-export const Transactions = () => {
+export const Transactions = ({ transactions }) => {
   return (
     <STransTable>
       <thead>
@@ -18,13 +17,13 @@ export const Transactions = () => {
         </STransHeadTr>
       </thead>
       <tbody>
-        <Transaction />
+        <TransactionsItem data={transactions} />
       </tbody>
     </STransTable>
   );
 };
 
-const Transaction = () => {
+const TransactionsItem = ({ data }) => {
   return data.map(({ id, type, amount, currency }) => {
     rowIndex += 1;
     let bColor = 'white';
