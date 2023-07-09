@@ -18,13 +18,13 @@ export const Transactions = ({ transactions }) => {
         </STransHeadTr>
       </thead>
       <tbody>
-        <TransactionsItem transactions={transactions} />
+        <TransactionsItems transactions={transactions} />
       </tbody>
     </STransTable>
   );
 };
 
-const TransactionsItem = ({ transactions }) => {
+const TransactionsItems = ({ transactions }) => {
   return transactions.map(({ id, type, amount, currency }) => {
     rowIndex += 1;
     let bColor = 'white';
